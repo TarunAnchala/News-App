@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -47,9 +48,16 @@ public class NewsJUnitTest {
         }
     }
 
+    @Test
+    public void validateSize() {
+        if (newsViewModel.getNewsData().getValue() != null) {
+            assertEquals(newsViewModel.getNewsData().getValue().size(), newsViewModel.getListOfNews().size());
+        }
+    }
+
     @AfterClass
-    public static void tearDown(){
-        newsViewModel=null;
+    public static void tearDown() {
+        newsViewModel = null;
     }
 
 }

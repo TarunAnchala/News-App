@@ -11,15 +11,15 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        context=getApplicationContext();
-        packName=context.getPackageName();
+        context = getApplicationContext();
+        packName = context.getPackageName();
     }
 
-    public static Context getAppContext(){
+    public static Context getAppContext() {
         return context;
     }
 
-    public static String getPackName(){
+    public static String getPackName() {
         return packName;
     }
 }

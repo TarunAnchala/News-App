@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.assigment.newsapp.R;
 import com.assigment.newsapp.db.NewsEntity;
 import com.assigment.newsapp.utils.InjectManager;
-import com.assigment.newsapp.utils.MyApplication;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
     }
 
     public void setData(ArrayList<NewsEntity> listOfNews) {
-        Log.e(TAG, "setData: called==="+listOfNews.size() );
+        Log.e(TAG, "setData: called===" + listOfNews.size());
         this.listOfNews.clear();
         this.listOfNews = listOfNews;
         notifyDataSetChanged();
@@ -75,8 +74,8 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.e(TAG, "onClick:  called" );
-                    InjectManager.getInstance().inject(InjectManager.LAUNCH_DETAIL_SCREEN,getAdapterPosition());
+                    Log.e(TAG, "onClick:  called");
+                    InjectManager.getInstance().inject(InjectManager.LAUNCH_DETAIL_SCREEN, getAdapterPosition());
                 }
             });
         }

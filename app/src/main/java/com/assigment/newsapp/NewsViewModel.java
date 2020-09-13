@@ -61,7 +61,6 @@ public class NewsViewModel extends AndroidViewModel {
                 listOfNews.addAll(newsList);
                 newsLiveData.postValue((ArrayList<NewsEntity>) newsList);
             }
-
         });
     }
 

@@ -50,6 +50,8 @@
         android:layout_marginBottom="@dimen/news_title_bottom_margin"
         android:textColor="@color/dark_white"
         android:textSize="@dimen/news_title_text_size"
+        android:maxLines="3"
+        android:ellipsize="end"
         android:paddingEnd="@dimen/news_title_padding_end"
         app:layout_constraintBottom_toTopOf="@id/newsSource"
         app:layout_constraintStart_toStartOf="parent" />

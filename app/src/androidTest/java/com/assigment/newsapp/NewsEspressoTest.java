@@ -16,6 +16,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
@@ -25,7 +27,12 @@ public class NewsEspressoTest {
     public final ActivityTestRule<MainActivity> activity = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void scrollTo() {
+    public void checkVisibility() {
+        onView(withId(R.id.newsList)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void scrollToPosition() {
         setDelay(6000);
         onView(withId(R.id.newsList)).perform(navigate(5));
     }

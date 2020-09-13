@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements InjectManager.Inj
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         newsViewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
         newsRecyclerView = findViewById(R.id.newsList);
         progressBar = findViewById(R.id.progressBar);
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements InjectManager.Inj
         Bundle bundle = new Bundle();
         bundle.putInt(Utils.POSITION, position);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         DetailScreen detailScreen = new DetailScreen();
         detailScreen.setArguments(bundle);
         fragmentTransaction.replace(R.id.container, detailScreen, DetailScreen.TAG);
