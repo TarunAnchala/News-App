@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="headlinesText">H E A D L I N E S</string>
+    <string name="date">2020-09-13</string>
+</resources>

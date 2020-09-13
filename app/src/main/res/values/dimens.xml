@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="headlines_height">40dp</dimen>
+    <dimen name="headlines_text_size">29sp</dimen>
+    <dimen name="recycler_view_top_margin">40dp</dimen>
+    <dimen name="back_icon_margin">15dp</dimen>
+    <dimen name="back_icon_width_height">32dp</dimen>
+    <dimen name="ds_desc_margin_bottom">10dp</dimen>
+    <dimen name="ds_desc_padding_start_end">15dp</dimen>
+    <dimen name="ds_desc_text_size">14sp</dimen>
+    <dimen name="ds_source_margin_bottom">16dp</dimen>
+    <dimen name="ds_source_text_size">16sp</dimen>
+    <dimen name="ds_source_start_margin">15dp</dimen>
+    <dimen name="ds_date_text_size">20sp</dimen>
+    <dimen name="ds_date_bottom_margin">16dp</dimen>
+    <dimen name="ds_date_end_margin">15dp</dimen>
+    <dimen name="ds_title_bottom_margin">64dp</dimen>
+    <dimen name="ds_title_start_end_padding">24dp</dimen>
+    <dimen name="ds_title_text_Size">29sp</dimen>
+    <dimen name="news_item_start_margin">16dp</dimen>
+    <dimen name="news_item_top_end_margin">12dp</dimen>
+    <dimen name="news_item_height">230dp</dimen>
+    <dimen name="news_item_margin">15dp</dimen>
+    <dimen name="news_item_image_height">230dp</dimen>
+    <dimen name="news_source_start_bottom_margin">12dp</dimen>
+    <dimen name="news_source_text_size">12sp</dimen>
+    <dimen name="news_date_start_bottom_margin">12dp</dimen>
+    <dimen name="news_date_text_size">12sp</dimen>
+    <dimen name="news_title_start_padding">12dp</dimen>
+    <dimen name="news_title_bottom_margin">24dp</dimen>
+    <dimen name="news_title_text_size">20sp</dimen>
+    <dimen name="news_title_padding_end">12dp</dimen>
+</resources>

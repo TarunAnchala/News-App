@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/newsFullImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:foreground="@drawable/ds_grad"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/backIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/back_icon_margin"
+        android:background="@drawable/back_button_bg"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        android:layout_width="@dimen/back_icon_width_height"
+        android:layout_height="@dimen/back_icon_width_height"/>
+
+    <TextView
+        android:id="@+id/description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/ds_desc_margin_bottom"
+        android:textColor="@color/light_white"
+        android:fontFamily="sans-serif"
+        android:paddingStart="@dimen/ds_desc_padding_start_end"
+        android:paddingEnd="@dimen/ds_desc_padding_start_end"
+        android:textSize="@dimen/ds_desc_text_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/dsSource"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/ds_source_margin_bottom"
+        android:textSize="@dimen/ds_source_text_size"
+        android:textColor="@color/dark_white"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/ds_source_start_margin"
+        app:layout_constraintBottom_toTopOf="@id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/description"
+        android:gravity="end"
+        android:text="@string/date"
+        android:layout_marginBottom="@dimen/ds_date_bottom_margin"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/ds_date_text_size"
+        android:textColor="@color/dark_white"
+        android:layout_marginEnd="@dimen/ds_date_end_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/dsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/ds_title_bottom_margin"
+        android:paddingStart="@dimen/ds_title_start_end_padding"
+        android:paddingEnd="24dp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textColor="@color/dark_white"
+        android:textSize="@dimen/ds_title_text_Size"
+        app:layout_constraintBottom_toTopOf="@id/dsSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
