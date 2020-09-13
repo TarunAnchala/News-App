@@ -24,6 +24,7 @@ public class DetailScreen extends Fragment implements View.OnClickListener {
     public static final String TAG = "DetailScreen";
     private TextView source;
     private TextView dsTitle;
+    private TextView date;
     private TextView dsDescription;
     private ImageView dsLogo;
     private ImageView backIcon;
@@ -46,10 +47,10 @@ public class DetailScreen extends Fragment implements View.OnClickListener {
     }
 
     private void setData(NewsEntity newsEntity) {
-        Log.e(TAG, "setData: called ===" + newsEntity);
         source.setText(newsEntity.getSource());
         dsTitle.setText(newsEntity.getTitle());
         dsDescription.setText(newsEntity.getDescription());
+        date.setText(newsEntity.getDate());
         Glide.with(this).load(newsEntity.getImageUrl()).into(dsLogo);
     }
 
@@ -60,6 +61,7 @@ public class DetailScreen extends Fragment implements View.OnClickListener {
         dsLogo = view.findViewById(R.id.newsFullImage);
         backIcon = view.findViewById(R.id.backIcon);
         backIcon.setOnClickListener(this);
+        date = view.findViewById(R.id.date);
     }
 
     @Override

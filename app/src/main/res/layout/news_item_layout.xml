@@ -36,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/news_date_start_bottom_margin"
         android:layout_marginBottom="@dimen/news_date_start_bottom_margin"
-        android:text="@string/date"
         android:fontFamily="sans-serif"
         android:textColor="@color/light_white"
         android:textSize="@dimen/news_date_text_size"

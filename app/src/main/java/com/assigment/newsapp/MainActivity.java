@@ -7,18 +7,14 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.assigment.newsapp.adapter.NewsVerticalAdapter;
-import com.assigment.newsapp.db.NewsEntity;
 import com.assigment.newsapp.detailScreen.DetailScreen;
 import com.assigment.newsapp.utils.InjectManager;
 import com.assigment.newsapp.utils.Utils;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements InjectManager.InjectedEventNotifier {

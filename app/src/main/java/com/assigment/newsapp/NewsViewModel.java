@@ -66,11 +66,12 @@ public class NewsViewModel extends AndroidViewModel {
     }
 
     private void fetchNewsFromServer() {
-        Log.e(TAG, "fetchNews: called");
-        Call<News> newsApiCall = apiInterface.getNews("bitcoin", "2020-09-11", "publishedAt", API_KEY);
+        String date = Utils.getTodaysDate();
+        Call<News> newsApiCall = apiInterface.getNews("bitcoin", date, "publishedAt", API_KEY);
         newsApiCall.enqueue(new Callback<News>() {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
+                Log.e(TAG, "onResponse: called==" + response.isSuccessful());
                 executor.execute(() -> {
                     if (response.isSuccessful() && response.body() != null) {
                         ArrayList<Articles> listOfArticles = response.body().getArticles();
@@ -83,7 +84,7 @@ public class NewsViewModel extends AndroidViewModel {
                                     Source source = article.getSource();
                                     if (source != null) {
                                         String newsSource = source.getName();
-                                        NewsEntity newsEntity = new NewsEntity(0, article.getTitle(), article.getDescription(), newsSource, article.getUrlToImage(), "2019-07-03");
+                                        NewsEntity newsEntity = new NewsEntity(0, article.getTitle(), article.getDescription(), newsSource, article.getUrlToImage(), date);
                                         newsDao.addNewsToDb(newsEntity);
                                         listOfNews.add(newsEntity);
                                     }

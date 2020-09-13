@@ -43,6 +43,7 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
         NewsEntity news = listOfNews.get(position);
         holder.getSource().setText(news.getSource());
         holder.getTitle().setText(news.getTitle());
+        holder.getDate().setText(news.getDate());
         Glide.with(context).load(news.getImageUrl()).into(holder.getNewsImage());
     }
 
@@ -63,12 +64,14 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
         private ImageView newsImage;
         private TextView title;
         private TextView source;
+        private TextView date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             newsImage = itemView.findViewById(R.id.newsImage);
             title = itemView.findViewById(R.id.newsTitle);
             source = itemView.findViewById(R.id.newsSource);
+            date = itemView.findViewById(R.id.newsDate);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -88,6 +91,10 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
 
         public TextView getSource() {
             return source;
+        }
+
+        public TextView getDate() {
+            return date;
         }
     }
 }
