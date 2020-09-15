@@ -22,4 +22,6 @@ public class MyApplication extends Application {
     public static String getPackName() {
         return packName;
     }
+
+
 }

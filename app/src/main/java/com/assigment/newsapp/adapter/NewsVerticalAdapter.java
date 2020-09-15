@@ -43,7 +43,7 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
         holder.getSource().setText(news.getSource());
         holder.getTitle().setText(news.getTitle());
         holder.getDate().setText(news.getDate());
-        Glide.with(context).load(news.getImageUrl()).into(holder.getNewsImage());
+        Glide.with(context).load(news.getImageUrl()).thumbnail(0.2f).into(holder.getNewsImage());
     }
 
     @Override

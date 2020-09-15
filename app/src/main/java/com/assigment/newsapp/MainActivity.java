@@ -3,11 +3,12 @@ package com.assigment.newsapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements InjectManager.Inj
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        newsViewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
+        newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
         newsRecyclerView = findViewById(R.id.newsList);
         progressBar = findViewById(R.id.progressBar);
         newsRecyclerView.setHasFixedSize(true);
@@ -41,9 +42,11 @@ public class MainActivity extends AppCompatActivity implements InjectManager.Inj
 
     private void fetchNewsAndSetData() {
         newsViewModel.getNewsData().observe(this, listOfNewsEntities -> {
-            if (listOfNewsEntities != null) {
-                progressBar.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
+            if (listOfNewsEntities != null && listOfNewsEntities.size() > 0) {
                 newsVerticalAdapter.setData(listOfNewsEntities);
+            } else {
+                Toast.makeText(this, R.string.data_not_available, Toast.LENGTH_SHORT).show();
             }
         });
     }

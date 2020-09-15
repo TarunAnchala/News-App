@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.assigment.newsapp.NewsViewModel;
@@ -39,7 +40,7 @@ public class DetailScreen extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
         initializeViews(view);
         if (getArguments() != null && getActivity() != null) {
-            NewsViewModel viewModel = ViewModelProviders.of(getActivity()).get(NewsViewModel.class);
+            NewsViewModel viewModel = new ViewModelProvider(requireActivity()).get(NewsViewModel.class);
             NewsEntity newsEntity = viewModel.getNewsObj(getArguments().getInt(Utils.POSITION));
             setData(newsEntity);
         }
@@ -50,7 +51,7 @@ public class DetailScreen extends Fragment implements View.OnClickListener {
         dsTitle.setText(newsEntity.getTitle());
         dsDescription.setText(newsEntity.getDescription());
         date.setText(newsEntity.getDate());
-        Glide.with(this).load(newsEntity.getImageUrl()).into(dsLogo);
+        Glide.with(this).load(newsEntity.getImageUrl()).thumbnail(0.2f).into(dsLogo);
     }
 
     private void initializeViews(View view) {

@@ -118,4 +118,9 @@ public class NewsViewModel extends AndroidViewModel {
     public ArrayList<NewsEntity> getListOfNews() {
         return listOfNews;
     }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+    }
 }
