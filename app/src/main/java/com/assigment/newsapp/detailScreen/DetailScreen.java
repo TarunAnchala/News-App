@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.assigment.newsapp.NewsViewModel;
 import com.assigment.newsapp.R;
@@ -46,14 +45,6 @@ public class DetailScreen extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void setData(NewsEntity newsEntity) {
-        source.setText(newsEntity.getSource());
-        dsTitle.setText(newsEntity.getTitle());
-        dsDescription.setText(newsEntity.getDescription());
-        date.setText(newsEntity.getDate());
-        Glide.with(this).load(newsEntity.getImageUrl()).thumbnail(0.2f).into(dsLogo);
-    }
-
     private void initializeViews(View view) {
         source = view.findViewById(R.id.dsSource);
         dsTitle = view.findViewById(R.id.dsTitle);
@@ -63,6 +54,15 @@ public class DetailScreen extends Fragment implements View.OnClickListener {
         backIcon.setOnClickListener(this);
         date = view.findViewById(R.id.date);
     }
+
+    private void setData(NewsEntity newsEntity) {
+        source.setText(newsEntity.getSource());
+        dsTitle.setText(newsEntity.getTitle());
+        dsDescription.setText(newsEntity.getDescription());
+        date.setText(newsEntity.getDate());
+        Glide.with(this).load(newsEntity.getImageUrl()).thumbnail(0.2f).into(dsLogo);
+    }
+
 
     @Override
     public void onClick(View view) {

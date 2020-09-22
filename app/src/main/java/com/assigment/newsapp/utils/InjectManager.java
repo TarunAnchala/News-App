@@ -21,7 +21,7 @@ public class InjectManager {
 
 
     private InjectManager() {
-        Log.e(TAG, "NEventsInjectManager initializing");
+
     }
 
 

@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements InjectManager.Inj
         fragmentTransaction.replace(R.id.container, detailScreen, DetailScreen.TAG);
         fragmentTransaction.addToBackStack(DetailScreen.TAG);
         fragmentTransaction.commit();
+
     }
 
     @Override

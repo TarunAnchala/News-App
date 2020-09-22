@@ -1,7 +1,6 @@
 package com.assigment.newsapp.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +51,6 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
     }
 
     public void setData(ArrayList<NewsEntity> listOfNews) {
-        Log.e(TAG, "setData: called===" + listOfNews.size());
         this.listOfNews.clear();
         this.listOfNews = listOfNews;
         notifyDataSetChanged();
@@ -74,7 +72,6 @@ public class NewsVerticalAdapter extends RecyclerView.Adapter<NewsVerticalAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.e(TAG, "onClick:  called");
                     InjectManager.getInstance().inject(InjectManager.LAUNCH_DETAIL_SCREEN, getAdapterPosition());
                 }
             });

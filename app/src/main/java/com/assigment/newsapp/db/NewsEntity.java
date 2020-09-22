@@ -94,4 +94,6 @@ public class NewsEntity {
                 ", date='" + date + '\'' +
                 '}';
     }
+
+
 }

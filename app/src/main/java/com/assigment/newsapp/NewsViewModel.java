@@ -1,6 +1,7 @@
 package com.assigment.newsapp;
 
 import android.app.Application;
+import android.os.Looper;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -53,6 +54,10 @@ public class NewsViewModel extends AndroidViewModel {
         }
     }
 
+
+    /**
+     * To fetch new from DB if server data not available or n/w is unavailable
+     */
     private void fetchNewsFromDB() {
         executor.execute(() -> {
             List<NewsEntity> newsList = newsDao.getListOfNews();
@@ -64,13 +69,16 @@ public class NewsViewModel extends AndroidViewModel {
         });
     }
 
+    /**
+     * used to fetch news from server
+     */
     private void fetchNewsFromServer() {
         String date = Utils.getTodaysDate();
         Call<News> newsApiCall = apiInterface.getNews("bitcoin", date, "publishedAt", API_KEY);
         newsApiCall.enqueue(new Callback<News>() {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
-                Log.e(TAG, "onResponse: called==" + response.isSuccessful());
+                Log.e(TAG, "onResponse: called==" + response.isSuccessful() + "===" + Looper.getMainLooper().isCurrentThread());
                 executor.execute(() -> {
                     if (response.isSuccessful() && response.body() != null) {
                         ArrayList<Articles> listOfArticles = response.body().getArticles();

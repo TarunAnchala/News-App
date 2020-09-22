@@ -1,7 +1,6 @@
 package com.assigment.newsapp.api.data;
 
 
-
 public class Articles {
 
     private String publishedAt;
@@ -20,89 +19,72 @@ public class Articles {
 
     private String content;
 
-    public String getPublishedAt ()
-    {
+    public String getPublishedAt() {
         return publishedAt;
     }
 
-    public void setPublishedAt (String publishedAt)
-    {
+    public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
 
-    public String getAuthor ()
-    {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor (String author)
-    {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    public String getUrlToImage ()
-    {
+    public String getUrlToImage() {
         return urlToImage;
     }
 
-    public void setUrlToImage (String urlToImage)
-    {
+    public void setUrlToImage(String urlToImage) {
         this.urlToImage = urlToImage;
     }
 
-    public String getDescription ()
-    {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription (String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public Source getSource ()
-    {
+    public Source getSource() {
         return source;
     }
 
-    public void setSource (Source source)
-    {
+    public void setSource(Source source) {
         this.source = source;
     }
 
-    public String getTitle ()
-    {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle (String title)
-    {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getUrl ()
-    {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl (String url)
-    {
+    public void setUrl(String url) {
         this.url = url;
     }
 
-    public String getContent ()
-    {
+    public String getContent() {
         return content;
     }
 
-    public void setContent (String content)
-    {
+    public void setContent(String content) {
         this.content = content;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [publishedAt = "+publishedAt+", author = "+author+", urlToImage = "+urlToImage+", description = "+description+", source = "+source+", title = "+title+", url = "+url+", content = "+content+"]";
+    public String toString() {
+        return "ClassPojo [publishedAt = " + publishedAt + ", author = " + author + ", urlToImage = " + urlToImage + ", description = " + description + ", source = " + source + ", title = " + title + ", url = " + url + ", content = " + content + "]";
     }
 }
